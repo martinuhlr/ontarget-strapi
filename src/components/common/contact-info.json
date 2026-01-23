@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_common_contact_info",
+  "info": {
+    "displayName": "Contact Info"
+  },
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "value": {
+      "type": "string",
+      "required": true
+    },
+    "href": {
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "reference_pages",
+  "info": {
+    "singularName": "reference-page",
+    "pluralName": "reference-pages",
+    "displayName": "Reference Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "heroEyebrow": {
+      "type": "string",
+      "required": true
+    },
+    "heroTitle": {
+      "type": "string",
+      "required": true
+    },
+    "heroDescription": {
+      "type": "text",
+      "required": true
+    },
+    "filtersAllLabel": {
+      "type": "string",
+      "required": true
+    },
+    "filtersCategories": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.text-item"
+    }
+  }
+}

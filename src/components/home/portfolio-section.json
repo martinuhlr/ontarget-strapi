@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_home_portfolio_section",
+  "info": {
+    "displayName": "Portfolio Section"
+  },
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "allProjectsLabel": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

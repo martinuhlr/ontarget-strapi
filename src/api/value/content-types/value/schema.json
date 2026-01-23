@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "values",
+  "info": {
+    "singularName": "value",
+    "pluralName": "values",
+    "displayName": "Value"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "icon": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

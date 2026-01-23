@@ -1,0 +1,43 @@
+{
+  "kind": "singleType",
+  "collectionName": "services_pages",
+  "info": {
+    "singularName": "services-page",
+    "pluralName": "services-pages",
+    "displayName": "Services Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "heroEyebrow": {
+      "type": "string",
+      "required": true
+    },
+    "heroTitleLine1": {
+      "type": "string",
+      "required": true
+    },
+    "heroTitleLine2": {
+      "type": "string",
+      "required": true
+    },
+    "heroDescription": {
+      "type": "text",
+      "required": true
+    },
+    "listCtaTitle": {
+      "type": "string",
+      "required": true
+    },
+    "listCtaDescription": {
+      "type": "text",
+      "required": true
+    },
+    "listCtaButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.cta"
+    }
+  }
+}

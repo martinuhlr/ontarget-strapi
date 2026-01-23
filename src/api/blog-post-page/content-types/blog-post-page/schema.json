@@ -1,0 +1,43 @@
+{
+  "kind": "singleType",
+  "collectionName": "blog_post_pages",
+  "info": {
+    "singularName": "blog-post-page",
+    "pluralName": "blog-post-pages",
+    "displayName": "Blog Post Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "backLabel": {
+      "type": "string",
+      "required": true
+    },
+    "shareLabel": {
+      "type": "string",
+      "required": true
+    },
+    "relatedTitle": {
+      "type": "string",
+      "required": true
+    },
+    "authorBioLabel": {
+      "type": "string",
+      "required": true
+    },
+    "ctaTitle": {
+      "type": "string",
+      "required": true
+    },
+    "ctaDescription": {
+      "type": "text",
+      "required": true
+    },
+    "ctaButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.cta"
+    }
+  }
+}

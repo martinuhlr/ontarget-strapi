@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_common_seo",
+  "info": {
+    "displayName": "SEO"
+  },
+  "attributes": {
+    "metaTitle": {
+      "type": "string",
+      "required": true
+    },
+    "metaDescription": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_pages",
+  "info": {
+    "singularName": "about-page",
+    "pluralName": "about-pages",
+    "displayName": "About Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "heroEyebrow": {
+      "type": "string",
+      "required": true
+    },
+    "heroTitleLine1": {
+      "type": "string",
+      "required": true
+    },
+    "heroTitleLine2Accent": {
+      "type": "string",
+      "required": true
+    },
+    "heroDescription": {
+      "type": "text",
+      "required": true
+    },
+    "valuesTitle": {
+      "type": "string",
+      "required": true
+    },
+    "values": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::value.value"
+    },
+    "storyTitle": {
+      "type": "string",
+      "required": true
+    },
+    "storyParagraphs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.text-item"
+    },
+    "storyMilestones": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.milestone"
+    },
+    "teamTitle": {
+      "type": "string",
+      "required": true
+    },
+    "teamDescription": {
+      "type": "text",
+      "required": true
+    },
+    "teamMembers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::team-member.team-member"
+    }
+  }
+}

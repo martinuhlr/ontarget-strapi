@@ -1,0 +1,86 @@
+{
+  "kind": "collectionType",
+  "collectionName": "references",
+  "info": {
+    "singularName": "reference",
+    "pluralName": "references",
+    "displayName": "Reference"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "category": {
+      "type": "string",
+      "required": true
+    },
+    "year": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "cardResult": {
+      "type": "string",
+      "required": true
+    },
+    "cardResultLabel": {
+      "type": "string",
+      "required": true
+    },
+    "cardColor": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false
+    },
+    "client": {
+      "type": "string",
+      "required": true
+    },
+    "duration": {
+      "type": "string",
+      "required": true
+    },
+    "services": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.text-item"
+    },
+    "challenge": {
+      "type": "text",
+      "required": true
+    },
+    "solution": {
+      "type": "text",
+      "required": true
+    },
+    "results": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.result"
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true
+    },
+    "nextProject": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::reference.reference"
+    }
+  }
+}

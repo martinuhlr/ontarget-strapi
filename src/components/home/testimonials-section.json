@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_home_testimonials_section",
+  "info": {
+    "displayName": "Testimonials Section"
+  },
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "dotLabelTemplate": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

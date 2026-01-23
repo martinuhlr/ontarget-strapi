@@ -1,0 +1,51 @@
+{
+  "kind": "singleType",
+  "collectionName": "service_detail_pages",
+  "info": {
+    "singularName": "service-detail-page",
+    "pluralName": "service-detail-pages",
+    "displayName": "Service Detail Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "backLabel": {
+      "type": "string",
+      "required": true
+    },
+    "includesEyebrow": {
+      "type": "string",
+      "required": true
+    },
+    "includesTitle": {
+      "type": "string",
+      "required": true
+    },
+    "processEyebrow": {
+      "type": "string",
+      "required": true
+    },
+    "processTitle": {
+      "type": "string",
+      "required": true
+    },
+    "nextLabel": {
+      "type": "string",
+      "required": true
+    },
+    "statsCtaTitle": {
+      "type": "string",
+      "required": true
+    },
+    "statsCtaDescription": {
+      "type": "text",
+      "required": true
+    },
+    "statsCtaButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.cta"
+    }
+  }
+}

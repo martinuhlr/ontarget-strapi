@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_common_brand",
+  "info": {
+    "displayName": "Brand"
+  },
+  "attributes": {
+    "primaryText": {
+      "type": "string",
+      "required": true
+    },
+    "accentText": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

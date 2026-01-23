@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_common_navigation",
+  "info": {
+    "displayName": "Navigation"
+  },
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.link"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.cta"
+    },
+    "mobileToggleLabel": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

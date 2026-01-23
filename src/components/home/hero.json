@@ -1,0 +1,58 @@
+{
+  "collectionName": "components_home_hero",
+  "info": {
+    "displayName": "Home Hero"
+  },
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "required": true
+    },
+    "titleLine1": {
+      "type": "string",
+      "required": true
+    },
+    "titleLine2Normal": {
+      "type": "string",
+      "required": true
+    },
+    "titleLine2Accent": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "primaryCta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.cta"
+    },
+    "secondaryCta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.cta"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false
+    },
+    "imageAlt": {
+      "type": "string",
+      "required": true
+    },
+    "statsValue": {
+      "type": "string",
+      "required": true
+    },
+    "statsLabel": {
+      "type": "string",
+      "required": true
+    },
+    "badgeText": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

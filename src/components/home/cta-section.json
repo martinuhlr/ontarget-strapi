@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_home_cta_section",
+  "info": {
+    "displayName": "CTA Section"
+  },
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "required": true
+    },
+    "titleLine1": {
+      "type": "string",
+      "required": true
+    },
+    "titleLine2": {
+      "type": "string",
+      "required": true
+    },
+    "titleLine3": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "primaryCta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.cta"
+    },
+    "secondaryCta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.cta"
+    },
+    "trustStats": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.number-stat"
+    }
+  }
+}

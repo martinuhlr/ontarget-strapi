@@ -1,0 +1,77 @@
+{
+  "kind": "singleType",
+  "collectionName": "contact_pages",
+  "info": {
+    "singularName": "contact-page",
+    "pluralName": "contact-pages",
+    "displayName": "Contact Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "heroEyebrow": {
+      "type": "string",
+      "required": true
+    },
+    "heroTitleLine1": {
+      "type": "string",
+      "required": true
+    },
+    "heroTitleLine2Accent": {
+      "type": "string",
+      "required": true
+    },
+    "heroDescription": {
+      "type": "text",
+      "required": true
+    },
+    "contactInfo": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.contact-info"
+    },
+    "socialsTitle": {
+      "type": "string",
+      "required": true
+    },
+    "socials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.link"
+    },
+    "formTitle": {
+      "type": "string",
+      "required": true
+    },
+    "formSuccessTitle": {
+      "type": "string",
+      "required": true
+    },
+    "formSuccessMessage": {
+      "type": "text",
+      "required": true
+    },
+    "formFields": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.form-field"
+    },
+    "formTextareaLabel": {
+      "type": "string",
+      "required": true
+    },
+    "formTextareaPlaceholder": {
+      "type": "string",
+      "required": true
+    },
+    "formSubmitLabel": {
+      "type": "string",
+      "required": true
+    },
+    "formPrivacyNote": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

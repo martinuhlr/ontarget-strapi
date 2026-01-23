@@ -1,0 +1,64 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_pages",
+  "info": {
+    "singularName": "home-page",
+    "pluralName": "home-pages",
+    "displayName": "Home Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.hero"
+    },
+    "servicesMarqueeItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.text-item"
+    },
+    "servicesSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.services-section"
+    },
+    "services": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::service.service"
+    },
+    "portfolioSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.portfolio-section"
+    },
+    "portfolioProjects": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::reference.reference"
+    },
+    "aboutSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.about-section"
+    },
+    "testimonialsSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.testimonials-section"
+    },
+    "testimonials": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::testimonial.testimonial"
+    },
+    "ctaSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.cta-section"
+    }
+  }
+}

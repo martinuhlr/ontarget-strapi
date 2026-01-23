@@ -1,0 +1,63 @@
+{
+  "kind": "singleType",
+  "collectionName": "case_study_pages",
+  "info": {
+    "singularName": "case-study-page",
+    "pluralName": "case-study-pages",
+    "displayName": "Case Study Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "backLabel": {
+      "type": "string",
+      "required": true
+    },
+    "yearLabel": {
+      "type": "string",
+      "required": true
+    },
+    "clientLabel": {
+      "type": "string",
+      "required": true
+    },
+    "durationLabel": {
+      "type": "string",
+      "required": true
+    },
+    "servicesLabel": {
+      "type": "string",
+      "required": true
+    },
+    "challengeTitle": {
+      "type": "string",
+      "required": true
+    },
+    "solutionTitle": {
+      "type": "string",
+      "required": true
+    },
+    "resultsTitle": {
+      "type": "string",
+      "required": true
+    },
+    "nextLabel": {
+      "type": "string",
+      "required": true
+    },
+    "ctaTitle": {
+      "type": "string",
+      "required": true
+    },
+    "ctaDescription": {
+      "type": "text",
+      "required": true
+    },
+    "ctaButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.cta"
+    }
+  }
+}

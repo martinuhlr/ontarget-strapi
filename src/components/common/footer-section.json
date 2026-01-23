@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_common_footer_section",
+  "info": {
+    "displayName": "Footer Section"
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.link"
+    }
+  }
+}

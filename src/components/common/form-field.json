@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_common_form_field",
+  "info": {
+    "displayName": "Form Field"
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "placeholder": {
+      "type": "string"
+    },
+    "required": {
+      "type": "boolean",
+      "default": false
+    },
+    "type": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

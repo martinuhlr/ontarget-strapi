@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_common_stat",
+  "info": {
+    "displayName": "Stat"
+  },
+  "attributes": {
+    "value": {
+      "type": "string",
+      "required": true
+    },
+    "label": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
