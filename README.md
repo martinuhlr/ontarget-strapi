@@ -1,61 +1,75 @@
-# 🚀 Getting started with Strapi
+# OnTarget Strapi CMS
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+A Strapi headless CMS application for OnTarget.
 
-### `develop`
+## 🚀 Quick Start
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
+### Prerequisites
 
+- Node.js >= 20.0.0 <= 24.x.x
+- npm >= 6.0.0
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Copy environment variables:
+   ```bash
+   cp .env.example .env
+   ```
+
+4. Generate secure keys and update `.env`:
+   ```bash
+   # Generate APP_KEYS (use 4 different keys)
+   openssl rand -base64 32
+   
+   # Generate security keys
+   openssl rand -base64 32  # For API_TOKEN_SALT
+   openssl rand -base64 32  # For ADMIN_JWT_SECRET
+   openssl rand -base64 32  # For TRANSFER_TOKEN_SALT
+   openssl rand -base64 32  # For JWT_SECRET
+   openssl rand -base64 32  # For ENCRYPTION_KEY
+   ```
+
+5. Start the development server:
+   ```bash
+   npm run develop
+   ```
+
+## 📦 Available Scripts
+
+- `npm run develop` - Start development server with auto-reload
+- `npm run build` - Build the admin panel for production
+- `npm run start` - Start production server
+- `npm run strapi` - Run Strapi CLI commands
+
+## 🗄️ Database
+
+This project supports both SQLite (development) and MySQL (production).
+
+### Development (SQLite)
+Default configuration uses SQLite. No additional setup required.
+
+### Production (MySQL)
+Update your `.env` file with MySQL credentials:
+```env
+DATABASE_CLIENT=mysql
+DATABASE_HOST=your_host
+DATABASE_PORT=3306
+DATABASE_NAME=your_database
+DATABASE_USERNAME=your_username
+DATABASE_PASSWORD=your_password
 ```
-npm run develop
-# or
-yarn develop
-```
 
-### `start`
+## 🚢 Deployment
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
+For detailed deployment instructions, see [DEPLOYMENT.md](./DEPLOYMENT.md).
 
-```
-npm run start
-# or
-yarn start
-```
+## 📚 Learn More
 
-### `build`
-
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
-
-```
-npm run build
-# or
-yarn build
-```
-
-## ⚙️ Deployment
-
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
-
-```
-yarn strapi deploy
-```
-
-## 📚 Learn more
-
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
-
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
-
-## ✨ Community
-
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
-
----
-
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+- [Strapi Documentation](https://docs.strapi.io)
+- [Strapi Community](https://discord.strapi.io)

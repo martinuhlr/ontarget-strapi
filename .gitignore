@@ -85,6 +85,16 @@ public/uploads/*
 .tsbuildinfo
 .eslintcache
 
+# Docs (all .md except README)
+*.md
+!README.md
+
+# Local deploy/setup scripts
+deploy_schemas.sh
+upload_schemas.sh
+run_on_server.sh
+QUICK_SETUP.sh
+
 ############################
 # Node.js
 ############################
