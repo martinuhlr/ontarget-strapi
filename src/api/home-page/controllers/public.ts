@@ -1,38 +1,38 @@
 import type { Core } from '@strapi/strapi';
 declare const strapi: Core.Strapi;
 
+const HOME_PAGE_UID = "api::home-page.home-page";
+
+const populate = {
+  hero: { populate: { primaryCta: true, secondaryCta: true, image: true } },
+  servicesMarqueeItems: true,
+  servicesSection: true,
+  services: { populate: { image: true } },
+  portfolioSection: true,
+  portfolioProjects: { populate: { image: true } },
+  aboutSection: { populate: { cta: true, image: true, stats: true } },
+  testimonialsSection: true,
+  testimonials: true,
+  ctaSection: { populate: { primaryCta: true, secondaryCta: true, trustStats: true } },
+};
+
 export default {
   async find(ctx) {
-    const entity = await strapi.entityService.findMany("api::home-page.home-page", {
-      populate: {
-        hero: {
-          populate: ["primaryCta", "secondaryCta", "image"],
-        },
-        servicesMarqueeItems: true,
-        servicesSection: true,
-        services: {
-          populate: ["image"],
-        },
-        portfolioSection: true,
-        portfolioProjects: {
-          populate: ["image"],
-        },
-        aboutSection: {
-          populate: ["cta", "image", "stats"],
-        },
-        testimonialsSection: true,
-        testimonials: true,
-        ctaSection: {
-          populate: ["primaryCta", "secondaryCta", "trustStats"],
-        },
-      },
+    // Use Document Service findFirst (same as default single-type) so relations populate correctly
+    const doc = await strapi.documents(HOME_PAGE_UID).findFirst({
+      status: "published",
+      populate,
     });
 
-    const raw = Array.isArray(entity) ? entity[0] : entity;
-    if (!raw) {
+    if (!doc) {
       return ctx.notFound();
     }
-    const { id, ...attributes } = raw as { id: number; [key: string]: unknown };
-    ctx.body = { data: { id, attributes } };
+
+    const { documentId, id, ...attributes } = doc as {
+      documentId?: string;
+      id: number;
+      [key: string]: unknown;
+    };
+    ctx.body = { data: { id: id ?? documentId, attributes } };
   },
 };

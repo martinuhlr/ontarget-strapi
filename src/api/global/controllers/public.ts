@@ -4,14 +4,11 @@ declare const strapi: Core.Strapi;
 export default {
   async find(ctx) {
     const entity = await strapi.entityService.findMany("api::global.global", {
+      publicationState: "live",
       populate: {
         brand: true,
-        navigation: {
-          populate: ["items", "cta"],
-        },
-        footer: {
-          populate: ["cta", "sections", "contact"],
-        },
+        navigation: { populate: { items: true, cta: true } },
+        footer: { populate: { cta: true, sections: true, contact: true } },
         seo: true,
       },
     });

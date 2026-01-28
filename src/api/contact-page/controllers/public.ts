@@ -4,7 +4,7 @@ declare const strapi: Core.Strapi;
 export default {
   async find(ctx) {
     const entity = await strapi.entityService.findMany("api::contact-page.contact-page", {
-      publicationState: ctx.query?.publicationState,
+      publicationState: (ctx.query?.publicationState as string) ?? "live",
       populate: {
         contactInfo: true,
         socials: true,

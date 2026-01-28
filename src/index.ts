@@ -44,7 +44,7 @@ export default {
    * run jobs, or perform some special logic.
    */
   async bootstrap({ strapi }) {
-    if (process.env.NODE_ENV === "production" && process.env.STRAPI_AUTO_PUBLIC_PERMISSIONS !== "1") {
+    if (process.env.STRAPI_AUTO_PUBLIC_PERMISSIONS !== "1") {
       return;
     }
 
