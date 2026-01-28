@@ -1,3 +1,6 @@
+import type { Core } from '@strapi/strapi';
+declare const strapi: Core.Strapi;
+
 export default {
   async find(ctx) {
     const entity = await strapi.entityService.findMany("api::contact-page.contact-page", {
