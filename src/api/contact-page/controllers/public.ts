@@ -12,11 +12,11 @@ export default {
       },
     });
 
-    if (!entity) {
+    const raw = Array.isArray(entity) ? entity[0] : entity;
+    if (!raw) {
       return ctx.notFound();
     }
-
-    const { id, ...attributes } = entity;
+    const { id, ...attributes } = raw as { id: number; [key: string]: unknown };
     ctx.body = { data: { id, attributes } };
   },
 };
