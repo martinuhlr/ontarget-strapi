@@ -67,7 +67,22 @@ DATABASE_PASSWORD=your_password
 
 ## 🚢 Deployment
 
-For detailed deployment instructions, see [DEPLOYMENT.md](./DEPLOYMENT.md).
+### Deploy na VPS (Hostinger)
+
+Na serveru po SSH spusť:
+
+```bash
+cd /home/user/htdocs/srv1304406.hstgr.cloud
+git remote add ontarget https://github.com/martinuhlr/ontarget-strapi.git 2>/dev/null || true
+git fetch ontarget master
+git checkout ontarget/master -- src/
+npm run build
+pm2 restart strapi
+```
+
+Nebo: `bash deploy-vps.sh` (pokud je skript na serveru).
+
+For other deployment details, see [DEPLOYMENT.md](./DEPLOYMENT.md) if present.
 
 ## 📚 Learn More
 
