@@ -1,7 +1,7 @@
 import type { Core } from "@strapi/strapi";
 declare const strapi: Core.Strapi;
 
-const UID = "api::reference-page.reference-page";
+const UID = "api::blog-page.blog-page";
 
 export default {
   async find(ctx) {

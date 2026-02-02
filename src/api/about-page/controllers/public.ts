@@ -7,10 +7,14 @@ export default {
   async find(ctx) {
     const isPreview = ctx.query.publicationState === "preview";
     const status = isPreview ? "draft" : "published";
+    let populate = ctx.query.populate ?? "*";
+    if (populate === "deep") {
+      populate = "*";
+    }
 
     const doc = await strapi.documents(UID).findFirst({
       status,
-      populate: "*",
+      populate,
     });
 
     if (!doc) {
