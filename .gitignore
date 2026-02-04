@@ -94,6 +94,7 @@ deploy_schemas.sh
 upload_schemas.sh
 run_on_server.sh
 QUICK_SETUP.sh
+deploy-via-ssh.sh
 
 ############################
 # Node.js
@@ -138,4 +139,5 @@ exports
 dist
 build
 .strapi-updater.json
-.strapi-cloud.jsonenv-sqlite-fix
+.strapi-cloud.json
+env-sqlite-fix

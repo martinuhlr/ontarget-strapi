@@ -21,6 +21,8 @@ do_deploy() {
 }
 
 if [ "$(whoami)" = "root" ]; then
+  echo "🔧 Fixing permissions..."
+  chown -R user:user "$PROJECT"
   su - user -c "cd $PROJECT && bash -c '$(declare -f do_deploy); do_deploy'"
 else
   do_deploy
