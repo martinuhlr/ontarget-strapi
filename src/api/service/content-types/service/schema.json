@@ -1,62 +1,62 @@
 {
-  "kind": "collectionType",
-  "collectionName": "services",
-  "info": {
-    "singularName": "service",
-    "pluralName": "services",
-    "displayName": "Service"
-  },
-  "options": {
-    "draftAndPublish": true
-  },
-  "attributes": {
-    "slug": {
-      "type": "uid",
-      "targetField": "title",
-      "required": true
+    "kind": "collectionType",
+    "collectionName": "services",
+    "info": {
+        "singularName": "service",
+        "pluralName": "services",
+        "displayName": "Service"
     },
-    "number": {
-      "type": "string",
-      "required": true
+    "options": {
+        "draftAndPublish": true
     },
-    "title": {
-      "type": "string",
-      "required": true
-    },
-    "shortDescription": {
-      "type": "text",
-      "required": true
-    },
-    "description": {
-      "type": "text",
-      "required": true
-    },
-    "icon": {
-      "type": "customField",
-      "customField": "plugin::strapi-plugin-iconhub.iconhub",
-      "required": true
-    },
-    "image": {
-      "type": "media",
-      "multiple": false
-    },
-    "features": {
-      "type": "component",
-      "repeatable": true,
-      "component": "common.text-item"
-    },
-    "process": {
-      "type": "component",
-      "repeatable": true,
-      "component": "common.process-step"
-    },
-    "statsValue": {
-      "type": "string",
-      "required": true
-    },
-    "statsLabel": {
-      "type": "string",
-      "required": true
+    "attributes": {
+        "slug": {
+            "type": "uid",
+            "targetField": "title",
+            "required": true
+        },
+        "number": {
+            "type": "string",
+            "required": true
+        },
+        "title": {
+            "type": "string",
+            "required": true
+        },
+        "shortDescription": {
+            "type": "text",
+            "required": true
+        },
+        "description": {
+            "type": "text",
+            "required": true
+        },
+        "icon": {
+            "type": "customField",
+            "customField": "plugin::strapi-plugin-iconhub.iconhub",
+            "required": true
+        },
+        "image": {
+            "type": "media",
+            "multiple": false
+        },
+        "features": {
+            "type": "component",
+            "repeatable": true,
+            "component": "common.text-item"
+        },
+        "process": {
+            "type": "component",
+            "repeatable": true,
+            "component": "common.process-step"
+        },
+        "statsValue": {
+            "type": "string",
+            "required": true
+        },
+        "statsLabel": {
+            "type": "string",
+            "required": true
+        }
     }
-  }
 }

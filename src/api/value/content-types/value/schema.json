@@ -1,27 +1,27 @@
 {
-  "kind": "collectionType",
-  "collectionName": "values",
-  "info": {
-    "singularName": "value",
-    "pluralName": "values",
-    "displayName": "Value"
-  },
-  "options": {
-    "draftAndPublish": true
-  },
-  "attributes": {
-    "title": {
-      "type": "string",
-      "required": true
+    "kind": "collectionType",
+    "collectionName": "values",
+    "info": {
+        "singularName": "value",
+        "pluralName": "values",
+        "displayName": "Value"
     },
-    "description": {
-      "type": "text",
-      "required": true
+    "options": {
+        "draftAndPublish": true
     },
-    "icon": {
-      "type": "customField",
-      "customField": "plugin::strapi-plugin-iconhub.iconhub",
-      "required": true
+    "attributes": {
+        "title": {
+            "type": "string",
+            "required": true
+        },
+        "description": {
+            "type": "text",
+            "required": true
+        },
+        "icon": {
+            "type": "customField",
+            "customField": "plugin::strapi-plugin-iconhub.iconhub",
+            "required": true
+        }
     }
-  }
 }
