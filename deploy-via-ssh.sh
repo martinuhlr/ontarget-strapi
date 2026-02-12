@@ -11,8 +11,10 @@ do_deploy() {
   echo "📥 Fetch z GitHubu..."
   git remote add ontarget "$REPO" 2>/dev/null || git remote set-url ontarget "$REPO"
   git fetch ontarget master
-  echo "📦 Checkout src..."
-  git checkout ontarget/master -- src/
+  echo "📦 Checkout (update all files)..."
+  git checkout ontarget/master -- .
+  echo "📦 Installing dependencies..."
+  npm install --production=false
   echo "🔨 npm run build..."
   npm run build
   echo "🔄 PM2 restart..."
@@ -23,7 +25,7 @@ do_deploy() {
 if [ "$(whoami)" = "root" ]; then
   echo "🔧 Fixing permissions..."
   chown -R user:user "$PROJECT"
-  su - user -c "cd $PROJECT && bash -c '$(declare -f do_deploy); do_deploy'"
+  su - user -c "cd $PROJECT && PROJECT=\"$PROJECT\" REPO=\"$REPO\" bash -c '$(declare -f do_deploy); do_deploy'"
 else
   do_deploy
 fi
