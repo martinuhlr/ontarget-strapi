@@ -1,68 +1,67 @@
 {
-  "kind": "collectionType",
-  "collectionName": "blog_posts",
-  "info": {
-    "singularName": "blog-post",
-    "pluralName": "blog-posts",
-    "displayName": "Blog Post"
-  },
-  "options": {
-    "draftAndPublish": true
-  },
-  "attributes": {
-    "slug": {
-      "type": "uid",
-      "targetField": "title",
-      "required": true
+    "kind": "collectionType",
+    "collectionName": "blog_posts",
+    "info": {
+        "singularName": "blog-post",
+        "pluralName": "blog-posts",
+        "displayName": "Blog Post",
+        "description": "Blog posts for the website"
     },
-    "title": {
-      "type": "string",
-      "required": true
+    "options": {
+        "draftAndPublish": true
     },
-    "excerpt": {
-      "type": "text",
-      "required": true
-    },
-    "category": {
-      "type": "string",
-      "required": true
-    },
-    "authorName": {
-      "type": "string",
-      "required": true
-    },
-    "authorRole": {
-      "type": "string",
-      "required": true
-    },
-    "authorBio": {
-      "type": "text",
-      "required": true
-    },
-    "date": {
-      "type": "date",
-      "required": true
-    },
-    "readTime": {
-      "type": "string",
-      "required": true
-    },
-    "featured": {
-      "type": "boolean",
-      "default": false
-    },
-    "image": {
-      "type": "media",
-      "multiple": false
-    },
-    "content": {
-      "type": "text",
-      "required": true
-    },
-    "relatedPosts": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::blog-post.blog-post"
+    "attributes": {
+        "slug": {
+            "type": "uid",
+            "targetField": "title",
+            "required": true
+        },
+        "title": {
+            "type": "string",
+            "required": true
+        },
+        "excerpt": {
+            "type": "text"
+        },
+        "category": {
+            "type": "string",
+            "default": "General"
+        },
+        "authorName": {
+            "type": "string",
+            "default": "OnTarget Team"
+        },
+        "authorRole": {
+            "type": "string"
+        },
+        "authorBio": {
+            "type": "text"
+        },
+        "date": {
+            "type": "date"
+        },
+        "readTime": {
+            "type": "string",
+            "default": "5 min read"
+        },
+        "featured": {
+            "type": "boolean",
+            "default": false
+        },
+        "image": {
+            "type": "media",
+            "multiple": false,
+            "allowedTypes": [
+                "images"
+            ]
+        },
+        "content": {
+            "type": "richtext"
+        },
+        "relatedPosts": {
+            "type": "relation",
+            "relation": "manyToMany",
+            "target": "api::blog-post.blog-post"
+        }
     }
-  }
 }

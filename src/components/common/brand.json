@@ -1,23 +1,23 @@
 {
-  "collectionName": "components_common_brand",
-  "info": {
-    "displayName": "Brand"
-  },
-  "attributes": {
-    "logo": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images"
-      ]
+    "collectionName": "components_common_brand",
+    "info": {
+        "displayName": "Brand"
     },
-    "primaryText": {
-      "type": "string",
-      "required": true
-    },
-    "accentText": {
-      "type": "string",
-      "required": true
+    "attributes": {
+        "logo": {
+            "type": "media",
+            "multiple": false,
+            "allowedTypes": [
+                "images"
+            ]
+        },
+        "primaryText": {
+            "type": "string",
+            "required": true
+        },
+        "accentText": {
+            "type": "string",
+            "required": true
+        }
     }
-  }
 }

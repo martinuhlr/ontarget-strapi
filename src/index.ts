@@ -44,18 +44,28 @@ export default {
    * run jobs, or perform some special logic.
    */
   async bootstrap({ strapi }) {
-    if (process.env.STRAPI_AUTO_PUBLIC_PERMISSIONS !== "1") {
+    // Force permission setup in development or if env var is set
+    const shouldRun = process.env.NODE_ENV === "development" || process.env.STRAPI_AUTO_PUBLIC_PERMISSIONS === "1";
+    
+    if (!shouldRun) {
       return;
     }
+
+    console.log("[Bootstrap] Configuring public permissions...");
 
     const publicRole = await strapi
       .query("plugin::users-permissions.role")
       .findOne({ where: { type: "public" } });
 
-    if (!publicRole) return;
+    if (!publicRole) {
+      console.warn("[Bootstrap] Public role not found. Skipping permission setup.");
+      return;
+    }
 
+    let count = 0;
     await Promise.all(
       PUBLIC_ACTIONS.map(async (action) => {
+        // Find existing permission (enabled or disabled)
         const existing = await strapi
           .query("plugin::users-permissions.permission")
           .findMany({ where: { role: publicRole.id, action } });
@@ -64,18 +74,26 @@ export default {
           await strapi
             .query("plugin::users-permissions.permission")
             .create({ data: { action, role: publicRole.id, enabled: true } });
-          return;
+          count++;
+        } else {
+          // Ensure enabled
+          await Promise.all(
+            existing.map((permission) => {
+              if (permission.enabled) return null;
+              count++;
+              return strapi
+                .query("plugin::users-permissions.permission")
+                .update({ where: { id: permission.id }, data: { enabled: true } });
+            }),
+          );
         }
-
-        await Promise.all(
-          existing.map((permission) => {
-            if (permission.enabled) return null;
-            return strapi
-              .query("plugin::users-permissions.permission")
-              .update({ where: { id: permission.id }, data: { enabled: true } });
-          }),
-        );
       }),
     );
+    
+    if (count > 0) {
+      console.log(`[Bootstrap] Enabled ${count} public permissions.`);
+    } else {
+      console.log("[Bootstrap] Public permissions are already up to date.");
+    }
   },
 };

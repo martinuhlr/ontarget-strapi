@@ -35,7 +35,9 @@ export interface CommonContactInfo extends Struct.ComponentSchema {
   };
   attributes: {
     href: Schema.Attribute.String & Schema.Attribute.Required;
-    icon: Schema.Attribute.String & Schema.Attribute.Required;
+    icon: Schema.Attribute.JSON &
+      Schema.Attribute.Required &
+      Schema.Attribute.CustomField<'plugin::strapi-plugin-iconhub.iconhub'>;
     label: Schema.Attribute.String & Schema.Attribute.Required;
     value: Schema.Attribute.String & Schema.Attribute.Required;
   };

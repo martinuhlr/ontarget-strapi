@@ -579,6 +579,7 @@ export interface ApiBlogPostPageBlogPostPage extends Struct.SingleTypeSchema {
 export interface ApiBlogPostBlogPost extends Struct.CollectionTypeSchema {
   collectionName: 'blog_posts';
   info: {
+    description: 'Blog posts for the website';
     displayName: 'Blog Post';
     pluralName: 'blog-posts';
     singularName: 'blog-post';
@@ -587,18 +588,19 @@ export interface ApiBlogPostBlogPost extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    authorBio: Schema.Attribute.Text & Schema.Attribute.Required;
-    authorName: Schema.Attribute.String & Schema.Attribute.Required;
-    authorRole: Schema.Attribute.String & Schema.Attribute.Required;
-    category: Schema.Attribute.String & Schema.Attribute.Required;
-    content: Schema.Attribute.Text & Schema.Attribute.Required;
+    authorBio: Schema.Attribute.Text;
+    authorName: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'OnTarget Team'>;
+    authorRole: Schema.Attribute.String;
+    category: Schema.Attribute.String & Schema.Attribute.DefaultTo<'General'>;
+    content: Schema.Attribute.RichText;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    date: Schema.Attribute.Date & Schema.Attribute.Required;
-    excerpt: Schema.Attribute.Text & Schema.Attribute.Required;
+    date: Schema.Attribute.Date;
+    excerpt: Schema.Attribute.Text;
     featured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    image: Schema.Attribute.Media;
+    image: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -606,7 +608,8 @@ export interface ApiBlogPostBlogPost extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    readTime: Schema.Attribute.String & Schema.Attribute.Required;
+    readTime: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'5 min read'>;
     relatedPosts: Schema.Attribute.Relation<
       'manyToMany',
       'api::blog-post.blog-post'
@@ -913,7 +916,9 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     features: Schema.Attribute.Component<'common.text-item', true>;
-    icon: Schema.Attribute.String & Schema.Attribute.Required;
+    icon: Schema.Attribute.JSON &
+      Schema.Attribute.Required &
+      Schema.Attribute.CustomField<'plugin::strapi-plugin-iconhub.iconhub'>;
     image: Schema.Attribute.Media;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -1045,7 +1050,9 @@ export interface ApiValueValue extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
-    icon: Schema.Attribute.String & Schema.Attribute.Required;
+    icon: Schema.Attribute.JSON &
+      Schema.Attribute.Required &
+      Schema.Attribute.CustomField<'plugin::strapi-plugin-iconhub.iconhub'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::value.value'> &
       Schema.Attribute.Private;

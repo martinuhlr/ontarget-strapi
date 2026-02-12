@@ -10,6 +10,7 @@
     "strapi": "strapi"
   },
   "dependencies": {
+    "@arshiash80/strapi-plugin-iconhub": "^1.1.1",
     "@strapi/plugin-cloud": "5.33.4",
     "@strapi/plugin-users-permissions": "5.33.4",
     "@strapi/strapi": "5.33.4",
