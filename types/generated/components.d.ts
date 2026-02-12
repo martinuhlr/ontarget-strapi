@@ -7,6 +7,7 @@ export interface CommonBrand extends Struct.ComponentSchema {
   };
   attributes: {
     accentText: Schema.Attribute.String & Schema.Attribute.Required;
+    logo: Schema.Attribute.Media<'images'>;
     primaryText: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }

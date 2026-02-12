@@ -6,9 +6,13 @@ export default {
     const entity = await strapi.entityService.findMany("api::global.global", {
       publicationState: "live",
       populate: {
-        brand: true,
+        brand: {
+          populate: {
+            logo: true
+          }
+        },
         navigation: { populate: { items: true, cta: true } },
-        footer: { populate: { cta: true, sections: true, contact: true } },
+        footer: { populate: { cta: true, sections: { populate: { links: true } }, contact: true } },
         seo: true,
       },
     });

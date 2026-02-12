@@ -4,6 +4,13 @@
     "displayName": "Brand"
   },
   "attributes": {
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
     "primaryText": {
       "type": "string",
       "required": true
