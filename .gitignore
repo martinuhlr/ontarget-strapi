@@ -66,6 +66,7 @@ $RECYCLE.BIN/
 ############################
 
 .tmp
+backups/
 *.log
 *.sql
 *.sqlite
@@ -89,12 +90,22 @@ public/uploads/*
 *.md
 !README.md
 
-# Local deploy/setup scripts
+# Local deploy/setup scripts (hosts, paths, keys)
 deploy_schemas.sh
 upload_schemas.sh
 run_on_server.sh
 QUICK_SETUP.sh
 deploy-via-ssh.sh
+deploy.sh
+deploy-github.sh
+deploy-ontarget.sh
+sync-db-from-prod.sh
+
+# Keys / secrets (never commit)
+*.pem
+
+# Cursor IDE (local state)
+.cursor/
 
 ############################
 # Node.js
