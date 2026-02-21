@@ -95,5 +95,29 @@ export default {
     } else {
       console.log("[Bootstrap] Public permissions are already up to date.");
     }
+
+    // Ensure "Délka spolupráce" is never required
+    try {
+      const raw = await strapi.entityService.findMany("api::contact-page.contact-page", {
+        populate: { formFields: true },
+      });
+      const contactPage = Array.isArray(raw) ? raw[0] : raw;
+      const fields = contactPage?.formFields as Array<{ id?: number; label?: string; required?: boolean; [k: string]: unknown }> | undefined;
+      if (fields?.length) {
+        const cooperationLabel = /d[eé]lka\s+spolupr[aá]ce/i;
+        const updated = fields.map((f) =>
+          f.label && cooperationLabel.test(f.label) ? { ...f, required: false } : f
+        );
+        const changed = updated.some((f, i) => f.required !== fields[i].required);
+        if (changed) {
+          await strapi.entityService.update("api::contact-page.contact-page", contactPage.id, {
+            data: { formFields: updated },
+          });
+          console.log("[Bootstrap] Contact form: „Délka spolupráce“ set to optional.");
+        }
+      }
+    } catch (e) {
+      console.warn("[Bootstrap] Contact form field fix skipped:", (e as Error).message);
+    }
   },
 };

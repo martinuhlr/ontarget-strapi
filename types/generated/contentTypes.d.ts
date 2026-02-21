@@ -828,8 +828,8 @@ export interface ApiReferenceReference extends Struct.CollectionTypeSchema {
   };
   attributes: {
     cardColor: Schema.Attribute.String & Schema.Attribute.Required;
-    cardResult: Schema.Attribute.String & Schema.Attribute.Required;
-    cardResultLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    cardResult: Schema.Attribute.String;
+    cardResultLabel: Schema.Attribute.String;
     category: Schema.Attribute.String & Schema.Attribute.Required;
     challenge: Schema.Attribute.Text & Schema.Attribute.Required;
     client: Schema.Attribute.String & Schema.Attribute.Required;

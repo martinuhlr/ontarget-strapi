@@ -33,11 +33,11 @@
     },
     "cardResult": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "cardResultLabel": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "cardColor": {
       "type": "string",
