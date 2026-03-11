@@ -160,8 +160,8 @@ export interface CommonResult extends Struct.ComponentSchema {
     displayName: 'Result';
   };
   attributes: {
-    label: Schema.Attribute.String & Schema.Attribute.Required;
-    value: Schema.Attribute.String & Schema.Attribute.Required;
+    label: Schema.Attribute.String;
+    value: Schema.Attribute.String;
   };
 }
 

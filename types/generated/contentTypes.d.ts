@@ -651,7 +651,7 @@ export interface ApiCaseStudyPageCaseStudyPage extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     nextLabel: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
-    resultsTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    resultsTitle: Schema.Attribute.String;
     servicesLabel: Schema.Attribute.String & Schema.Attribute.Required;
     solutionTitle: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
@@ -852,6 +852,7 @@ export interface ApiReferenceReference extends Struct.CollectionTypeSchema {
     >;
     publishedAt: Schema.Attribute.DateTime;
     results: Schema.Attribute.Component<'common.result', true>;
+    resultsTitle: Schema.Attribute.String;
     services: Schema.Attribute.Component<'common.text-item', true>;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     solution: Schema.Attribute.Text & Schema.Attribute.Required;
