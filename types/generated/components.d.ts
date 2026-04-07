@@ -165,6 +165,18 @@ export interface CommonResult extends Struct.ComponentSchema {
   };
 }
 
+export interface CommonReview extends Struct.ComponentSchema {
+  collectionName: 'components_common_review';
+  info: {
+    displayName: 'Review';
+  };
+  attributes: {
+    author: Schema.Attribute.String & Schema.Attribute.Required;
+    quote: Schema.Attribute.Text & Schema.Attribute.Required;
+    role: Schema.Attribute.String;
+  };
+}
+
 export interface CommonSeo extends Struct.ComponentSchema {
   collectionName: 'components_common_seo';
   info: {
@@ -304,6 +316,7 @@ declare module '@strapi/strapi' {
       'common.number-stat': CommonNumberStat;
       'common.process-step': CommonProcessStep;
       'common.result': CommonResult;
+      'common.review': CommonReview;
       'common.seo': CommonSeo;
       'common.stat': CommonStat;
       'common.text-item': CommonTextItem;

@@ -853,9 +853,11 @@ export interface ApiReferenceReference extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     results: Schema.Attribute.Component<'common.result', true>;
     resultsTitle: Schema.Attribute.String;
+    review: Schema.Attribute.Component<'common.review', false>;
     services: Schema.Attribute.Component<'common.text-item', true>;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     solution: Schema.Attribute.Text & Schema.Attribute.Required;
+    tagline: Schema.Attribute.String;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -916,6 +918,13 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
+    externalUrl: Schema.Attribute.String;
+    externalUrlRel: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'noopener noreferrer'>;
+    externalUrlTarget: Schema.Attribute.Enumeration<
+      ['_self', '_blank', '_parent', '_top']
+    > &
+      Schema.Attribute.DefaultTo<'_blank'>;
     features: Schema.Attribute.Component<'common.text-item', true>;
     icon: Schema.Attribute.JSON &
       Schema.Attribute.Required &

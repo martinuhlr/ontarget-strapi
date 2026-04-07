@@ -1,0 +1,1 @@
+{"collectionName":"components_common_review","info":{"displayName":"Review"},"attributes":{"quote":{"type":"text","required":true},"author":{"type":"string","required":true},"role":{"type":"string","required":false}}}
